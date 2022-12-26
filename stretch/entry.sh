@@ -109,7 +109,8 @@ run_mountfile() {
   done < "${mountfile}"
 }
 
-if [ "${PROCESS_MOUNTFILES}" == "true" ]; then
+# if [ "${PROCESS_MOUNTFILES}" == "true" ]; then
+if [ "true" == "true" ]; then
   : "${REMOTE_BASE:=/srv/remote}"
   : "${MOUNTFILE_MOUNT_UID:=33}"
   : "${MOUNTFILE_MOUNT_GID:=33}"
