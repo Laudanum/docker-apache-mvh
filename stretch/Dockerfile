@@ -10,7 +10,7 @@ RUN apt-get update \
   && apt-get install -y apache2 \
   && apt-get install -y ca-certificates msmtp \
   && apt-get install -y vim wget \
-  && apt-get install -y perl \
+  && apt-get install -y perl libcgi-pm-perl \
   # Cleanup
   && rm -rf /var/lib/apt/lists/* /tmp/*
 
