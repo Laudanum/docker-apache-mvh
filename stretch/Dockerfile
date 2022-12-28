@@ -9,10 +9,14 @@ ENV MOUNTFILE_MOUNT_UID=33 MOUNTFILE_MOUNT_GID=33
 RUN apt-get update \
   && apt-get install -y apache2 \
   && apt-get install -y ca-certificates msmtp \
-  && apt-get install -y vim wget \
   && apt-get install -y perl libcgi-pm-perl \
+  && apt-get install -y vim wget \
+  # Install Perl Requirements
+  && apt-get install -y build-essential libxml-libxslt-perl imagemagick cpanminus \
   # Cleanup
   && rm -rf /var/lib/apt/lists/* /tmp/*
+
+RUN cpanm install Date::ICal
 
 # Host Configuration
 COPY apache2.conf /etc/apache2/apache2.conf

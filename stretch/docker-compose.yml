@@ -7,10 +7,10 @@ services:
 
     volumes:
       - type: bind
-        source: ./srv/www
+        source: ../../srv/www
         target: /srv/www
       - type: bind
-        source: ./srv/remote
+        source: ../../srv/remote
         target: /srv/remote
 volumes:
   myappwww:
