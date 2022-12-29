@@ -24,7 +24,7 @@ COPY mpm_prefork.conf /etc/apache2/mods-available/
 COPY mvhost.conf /etc/apache2/sites-available/
 RUN rm /etc/apache2/conf-enabled/* /etc/apache2/sites-enabled/* \
   && a2dismod mpm_event \
-  && a2enmod vhost_alias mpm_prefork deflate rewrite expires headers cgid \
+  && a2enmod vhost_alias mpm_prefork deflate rewrite expires headers include cgid \
   && a2ensite mvhost.conf \
   && mkdir -p /srv/www
 
