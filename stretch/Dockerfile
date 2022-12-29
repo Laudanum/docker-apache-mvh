@@ -16,6 +16,7 @@ RUN apt-get update \
   # Cleanup
   && rm -rf /var/lib/apt/lists/* /tmp/*
 
+# Install Perl modules
 RUN cpanm install Date::ICal
 
 # Host Configuration
